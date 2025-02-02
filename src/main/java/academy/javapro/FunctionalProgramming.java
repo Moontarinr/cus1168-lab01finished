@@ -23,12 +23,16 @@ public class FunctionalProgramming {
         // Hint: Use .map(n -> ...)
         List<Integer> doubledNumbers = numbers.stream()
             // Write your code here
+            .map(n -> n * 2) 
             .collect(Collectors.toList());
 
         // TASK 3: Sum all numbers in doubledNumbers
         // TODO: Create a stream that sums all numbers
         // Hint: Use .mapToInt(n -> n).sum()
-        int sum = 0; // Replace with your stream code
+        int sum = doubledNumbers.stream()
+                .mapToInt(n -> n) 
+                .sum(); 
+        // int sum = 0; // Replace with your stream code
 
         // Print results
         System.out.println("Doubled numbers: " + doubledNumbers);
